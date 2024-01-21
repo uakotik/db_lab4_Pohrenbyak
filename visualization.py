@@ -78,7 +78,11 @@ with conn:
     graph_ax.set_ylabel('Кількість цукру')
     graph_ax.set_title('Графік залежності рейтингу від кількості цукру')
 
-    for qnt, price in zip(rating, sugar):
-        graph_ax.annotate(price, xy=(qnt, price), xytext=(7, 2), textcoords='offset points')  
+    for rating, sugar in zip(rating, sugar):
+        graph_ax.annotate(sugar, xy=(rating, sugar), xytext=(7, 2), textcoords='offset points')  
+    
+    mng = plt.get_current_fig_manager()
+    mng.resize(1400, 600)
+    plt.show()  
 
     
